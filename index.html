@@ -395,27 +395,27 @@
         }
         
         // Фотографии с подписями (которые ты написал)
-        const baseUrl = window.location.pathname.includes('eva-egor') ? '/eva-egor' : '';
-        
-        const photos = [
-            { url: baseUrl + '/photos/photo1.jpg', caption: '💕 Наше первое фото' },
-            { url: baseUrl + '/photos/photo2.jpg', caption: '💕 Самый счастливый день' },
-            { url: baseUrl + '/photos/photo3.jpg', caption: '💕 Ева и Егор' },
-            { url: baseUrl + '/photos/photo4.jpg', caption: '💕 Любимая моя' },
-            { url: baseUrl + '/photos/photo5.jpg', caption: '💕 Наше счастье' },
-            { url: baseUrl + '/photos/photo6.jpg', caption: '💕 Вместе навсегда' }
-        ];
-        
-        const photoGrid = document.getElementById('photoGrid');
-        photos.forEach(photo => {
-            const card = document.createElement('div');
-            card.className = 'photo-card';
-            card.innerHTML = `
-                <img src="${photo.url}" alt="${photo.caption}" onerror="this.src='https://via.placeholder.com/300x300?text=${encodeURIComponent(photo.caption)}'">
-                <p>${photo.caption}</p>
-            `;
-            photoGrid.appendChild(card);
-        });
+       const baseUrl = window.location.pathname.includes('eva-egor') ? '/eva-egor' : '';
+
+const photos = [
+    { url: baseUrl + '/photos/photo1.jpg', caption: '💕 Наше первое фото' },
+    { url: baseUrl + '/photos/photo2.jpg', caption: '💕 Самый счастливый день' },
+    { url: baseUrl + '/photos/photo3.jpg', caption: '💕 Ева и Егор' },
+    { url: baseUrl + '/photos/photo4.jpg', caption: '💕 Любимая моя' },
+    { url: baseUrl + '/photos/photo5.jpg', caption: '💕 Наше счастье' },
+    { url: baseUrl + '/photos/photo6.jpg', caption: '💕 Вместе навсегда' }
+];
+
+const photoGrid = document.getElementById('photoGrid');
+photos.forEach(photo => {
+    const card = document.createElement('div');
+    card.className = 'photo-card';
+    card.innerHTML = `
+        <img src="${photo.url}" alt="${photo.caption}" onerror="this.src='https://via.placeholder.com/300x300?text=${encodeURIComponent(photo.caption)}'">
+        <p>${photo.caption}</p>
+    `;
+    photoGrid.appendChild(card);
+});
     </script>
 </body>
 </html>
