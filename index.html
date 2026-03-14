@@ -164,7 +164,7 @@
         .photo-card {
             background: white;
             border-radius: 20px;
-            padding: 10px;
+            padding: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             transition: all 0.3s;
         }
@@ -182,10 +182,11 @@
         }
         
         .photo-card p {
-            margin-top: 10px;
+            margin-top: 15px;
             color: #ff6b6b;
             font-weight: bold;
-            font-size: 1.1em;
+            font-size: 1.2em;
+            text-align: center;
         }
         
         .footer {
@@ -365,9 +366,7 @@
             "🇧🇬 Болгарский: Обичам те",
             "🇷🇸 Сербский: Волим те",
             "🇲🇰 Македонский: Те сакам",
-            "🇲🇪 Черногорский: Volim te",
-            "🇪🇺 Идиш: איך האָב דיך ליב (Ikh hob dikh lib)",
-            "🇬🇱 Гренландский: Asavakkit"
+            "🇲🇪 Черногорский: Volim te"
         ];
         
         // Добавляем фразы на страницу
@@ -395,7 +394,7 @@
             heartsContainer.appendChild(createHeart());
         }
         
-        // Фотографии (замени ссылки на свои)
+        // Фотографии с подписями (которые ты написал)
         const baseUrl = window.location.pathname.includes('eva-egor') ? '/eva-egor' : '';
         
         const photos = [
@@ -412,7 +411,7 @@
             const card = document.createElement('div');
             card.className = 'photo-card';
             card.innerHTML = `
-                <img src="${photo.url}" alt="Ева и Егор" onerror="this.src='https://via.placeholder.com/300x300?text=Ева+❤️+Егор'">
+                <img src="${photo.url}" alt="${photo.caption}" onerror="this.src='https://via.placeholder.com/300x300?text=${encodeURIComponent(photo.caption)}'">
                 <p>${photo.caption}</p>
             `;
             photoGrid.appendChild(card);
